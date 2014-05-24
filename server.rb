@@ -25,8 +25,9 @@ end
 get '/:short' do
   @data = make_data()
   @short = params[:short]
-  if find_url(@short, @data)
-    redirect @newurl
+  @urlcheck = find_url(@short, @data)
+  if @urlcheck
+    redirect @urlcheck
   else
     redirect '/'
   end
