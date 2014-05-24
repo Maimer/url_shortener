@@ -14,6 +14,11 @@
       <div class="submit">
         <form action="/" name="submit" method="post">
           <div class="submitalink">Submit a Link: </div><input type="text" name="url" value="<%= @url %>" size="50">
+        <div class="error">
+          <% if @resubmit == true && check_dupurl(@url, @data) %> *URL has already been submitted <% end %>
+          <% if @resubmit == true && check_blank(@url) %> *Required Field
+          <% elsif @resubmit == true && check_url(@url) %> *Invalid URL <% end %>
+        </div>
         </form>
       </div>
       </br>

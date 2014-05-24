@@ -1,7 +1,6 @@
 require 'csv'
 require 'net/http'
 require 'uri'
-require 'pry'
 
 def make_data()
   links = []
@@ -14,6 +13,9 @@ end
 def fix_url(url)
   if url[0..6] != "http://" && url[0..7] != "https://"
     url = "http://" + url
+  end
+  if url[-1] == "/"
+    url = url.chop
   end
   url
 end
@@ -60,7 +62,7 @@ end
 
 def find_url(url, data)
   data.each do |line|
-    if url[-6..-1] == line[:url][-6..-1]
+    if url[-6..-1] == line[:short][-6..-1]
       return line[:url]
     end
   end
@@ -72,7 +74,7 @@ def update_data(url, data)
     file.puts "url,short,clicked"
     data.each do |line|
       num = 0
-      if line[:short][-6..-1] == url
+      if line[:short] == url
         num = 1
       end
       file.puts line[:url] + "," + line[:short] + "," + (line[:clicked].to_i + num).to_s
