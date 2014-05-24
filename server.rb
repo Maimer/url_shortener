@@ -14,7 +14,6 @@ post '/' do
   @url = fix_url(params["url"])
   if check_dupurl(@url, @data) || check_blank(@url) || check_url(@url)
     @resubmit = true
-    @url = ""
     erb :index
   else
     save_link(@url, @data)
