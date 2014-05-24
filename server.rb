@@ -27,6 +27,7 @@ get '/:short' do
   @short = params[:short]
   @urlcheck = find_url(@short, @data)
   if @urlcheck
+    update_data(@short, @data)
     redirect @urlcheck
   else
     redirect '/'
