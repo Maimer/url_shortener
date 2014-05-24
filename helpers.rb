@@ -60,7 +60,7 @@ end
 
 def find_url(url, data)
   data.each do |line|
-    if url[-6,-1] == line[:url][-6,-1]
+    if url[-6..-1] == line[:url][-6..-1]
       return line[:url]
     end
   end
@@ -69,9 +69,9 @@ end
 
 def update_data(url, data)
   File.open('data/linklist1.csv', "w") do |file|
+    file.puts "url,short,clicked"
     data.each do |line|
       num = 0
-      binding.pry
       if line[:short][-6..-1] == url
         num = 1
       end

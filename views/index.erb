@@ -30,7 +30,7 @@
     <div class="linklist">
       <% @data.each do |link| %>
         <div class="col1"> <%= link[:url] %> </div>
-        <div class="col2"> <%= link[:short] %> </div>
+        <div class="col2"><a href="/<%= link[:short][-6..-1] %>"> <%= link[:short] %> </a></div>
         <div class="col3"> <%= link[:clicked] %> </div>
         </br>
       <% end %>
