@@ -1,0 +1,51 @@
+body {
+  font-family: Verdana;
+  margin: 0px auto;
+  background-color: #FFFFCC;
+}
+
+.header {
+  margin: 0px auto;
+  text-align: center;
+  color: blue;
+}
+
+.submit {
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+  display: inline-block;
+}
+
+.submitalink {
+  display: inline-block;
+}
+
+.spacer {
+  width: 800px;
+  height: 2px;
+  margin: 0px auto;
+  background-color: gray;
+  clear: both;
+}
+
+.linklist {
+  width: 700px;
+  margin: 0px auto;
+}
+
+.col1 {
+  width: 400px;
+  display: inline-block;
+}
+
+.col2 {
+  width: 150px;
+  display: inline-block;
+}
+
+.col3 {
+  width: 130px;
+  display: inline-block;
+  text-align: center;
+}

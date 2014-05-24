@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ni.ck Link Shortener</title>
+    <link rel="stylesheet" href="/css.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>ni.ck Link Shortener</h1>
+    </div>
+      <div class="submit">
+        <form action="/" name="submit" method="post">
+          <div class="submitalink">Submit a Link: </div><input type="text" name="url" value="<%= @url %>" size="50">
+        </form>
+      </div>
+      </br>
+      </br>
+    <div class="spacer"></div>
+      </br>
+    <div class="linklist">
+      <div class="col1"> Original URL </div>
+      <div class="col2"> Shortened Link </div>
+      <div class="col3"> &#35; of Clicks </div>
+      </br>
+      </br>
+    </div>
+    <div class="linklist">
+      <% @data.each do |link| %>
+        <div class="col1"> <%= link[:url] %> </div>
+        <div class="col2"> <%= link[:short] %> </div>
+        <div class="col3"> <%= link[:clicked] %> </div>
+        </br>
+      <% end %>
+    </div>
+  </body>
+</html>
